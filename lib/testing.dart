@@ -8,21 +8,21 @@ extension Log on Object {
   void log() => devtools.log(toString());
 }
 
-void main() {
-  runApp(
-    MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      debugShowCheckedModeBanner: false,
-      home: BlocProvider(
-        create: (_) => PersonsBloc(),
-        child: const HomePage(),
-      ),
-    ),
-  );
-}
+// void main() {
+//   runApp(
+//     MaterialApp(
+//       title: 'Flutter Demo',
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       debugShowCheckedModeBanner: false,
+//       home: BlocProvider(
+//         create: (_) => PersonsBloc(),
+//         child: const HomePage(),
+//       ),
+//     ),
+//   );
+// }
 
 @immutable
 abstract class LoadAction {
@@ -44,9 +44,9 @@ extension UrlString on PersonUrl {
   String get urlString {
     switch (this) {
       case PersonUrl.persons1:
-        return 'http://10.0.2.2:5500/api/persons1.json';
+        return 'http://127.0.0.1:5500/api/persons1.json';
       case PersonUrl.persons2:
-        return 'http://10.0.2.2:5500/api/persons2.json';
+        return 'http://127.0.0.1:5500/api/persons2.json';
     }
   }
 }
