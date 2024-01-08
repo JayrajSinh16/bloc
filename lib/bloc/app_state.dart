@@ -1,31 +1,28 @@
-import 'package:app/models.dart';
+import 'dart:typed_data';
+
 import 'package:flutter/foundation.dart' show immutable;
 
 @immutable
 class AppState {
   final bool isLoading;
-  final LoginError? loginError;
-  final LoginHandel? loginHandel;
-  final Iterable<Note>? fetchedNotes;
-
-  const AppState.empty()
-      : isLoading = false,
-        loginError = null,
-        loginHandel = null,
-        fetchedNotes = null;
+  final Uint8List? data;
+  final Object? error;
 
   const AppState({
     required this.isLoading,
-    required this.loginError,
-    required this.loginHandel,
-    required this.fetchedNotes,
+    required this.data,
+    required this.error,
   });
+
+  const AppState.empty() :
+        isLoading = false,
+        data = null,
+        error = null;
 
   @override
   String toString() => {
-        'isLoading': isLoading,
-        'loginError': loginError,
-        'fetchedNotes': fetchedNotes,
-        'loginHandle': loginHandel,
-      }.toString();
+    'isLoading': isLoading,
+    'hasData' : data != null,
+    'error'   : error,
+  }.toString();
 }
