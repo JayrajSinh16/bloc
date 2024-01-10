@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:app/loading/loading_controller.dart';
+import 'package:app/loading/loading_screen_controller.dart';
 
 class LoadingScreen {
   LoadingScreen._sharedInstance();
-  static  final LoadingScreen _shared = LoadingScreen._sharedInstance();
+  static late final LoadingScreen _shared = LoadingScreen._sharedInstance();
   factory LoadingScreen.instance() => _shared;
 
   LoadingScreenController? controller;
@@ -87,7 +87,7 @@ class LoadingScreen {
       },
     );
 
-    state.insert(overlay);
+    state?.insert(overlay);
 
     return LoadingScreenController(
       close: () {

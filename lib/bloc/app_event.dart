@@ -25,8 +25,8 @@ class AppEventLogOut implements AppEvent {
 }
 
 @immutable
-class AppEventInitialized implements AppEvent {
-  const AppEventInitialized();
+class AppEventInitialize implements AppEvent {
+  const AppEventInitialize();
 }
 
 @immutable
@@ -49,6 +49,7 @@ class AppEventGoToRegistration implements AppEvent {
 class AppEventGoToLogin implements AppEvent {
   const AppEventGoToLogin();
 }
+
 @immutable
 class AppEventRegister implements AppEvent {
   final String email;
@@ -58,5 +59,4 @@ class AppEventRegister implements AppEvent {
     required this.email,
     required this.password,
   });
-} 
-
+}

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:app/bloc/app_bloc.dart';
 import 'package:app/bloc/app_event.dart';
 import 'package:app/dialogs/delete_account_dialog.dart';
-import 'package:app/dialogs/log_out_dialog.dart';
+import 'package:app/dialogs/logout_dialog.dart';
 
 enum MenuAction { logout, deleteAccount }
 

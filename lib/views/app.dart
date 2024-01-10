@@ -4,7 +4,7 @@ import 'package:app/bloc/app_bloc.dart';
 import 'package:app/bloc/app_event.dart';
 import 'package:app/bloc/app_state.dart';
 import 'package:app/dialogs/show_auth_error.dart';
-import 'package:app/loading/loading.dart';
+import 'package:app/loading/loading_screen.dart';
 import 'package:app/views/login_view.dart';
 import 'package:app/views/photo_gallery_view.dart';
 import 'package:app/views/register_view.dart';
@@ -19,7 +19,7 @@ class App extends StatelessWidget {
     return BlocProvider<AppBloc>(
       create: (_) => AppBloc()
         ..add(
-          const AppEventInitialized(),
+          const AppEventInitialize(),
         ),
       child: MaterialApp(
         title: 'Photo Library',
